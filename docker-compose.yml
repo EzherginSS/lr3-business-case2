@@ -1,0 +1,137 @@
+# Лабораторная работа 3, вариант 12 "Анализ онлайн-продаж"
+# Запуск: docker compose up -d   (предварительно ./setup.sh, он создает .env с секретами)
+
+x-airflow-environment: &airflow_environment
+  - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  - AIRFLOW__CORE__LOAD_EXAMPLES=False
+  - AIRFLOW__DATABASE__LOAD_DEFAULT_CONNECTIONS=False
+  - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql://airflow:airflow@postgres:5432/airflow
+  - AIRFLOW__CORE__STORE_DAG_CODE=True
+  - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+
+x-airflow-common: &airflow_common
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: lpw03-airflow:2.5.0
+  user: "${AIRFLOW_UID:-50000}:0"
+  environment: *airflow_environment
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - logs:/opt/airflow/logs
+
+services:
+  # Служебная БД метаданных Airflow
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 20
+
+  # Аналитическая БД: RAW, STG, витрина
+  analytics_postgres:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=analytics
+      - POSTGRES_PASSWORD=analytics
+      - POSTGRES_DB=analytics
+    ports:
+      - "5433:5432"
+    volumes:
+      - analytics_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "analytics"]
+      interval: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # Инициализация Airflow: схема БД, пользователь admin, подключение analytics_postgres
+  init:
+    <<: *airflow_common
+    depends_on:
+      postgres:
+        condition: service_healthy
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        airflow db upgrade &&
+        (airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.org || true) &&
+        (airflow connections add analytics_postgres --conn-type postgres --conn-host analytics_postgres --conn-schema analytics --conn-login analytics --conn-password analytics --conn-port 5432 || true)
+
+  webserver:
+    <<: *airflow_common
+    restart: always
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  scheduler:
+    <<: *airflow_common
+    restart: always
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      analytics_postgres:
+        condition: service_healthy
+    command: scheduler
+
+  superset:
+    build:
+      context: .
+      dockerfile: superset.Dockerfile
+    image: lpw03-superset:3.1.1
+    ports:
+      - "8088:8088"
+    environment:
+      # ключ хранится только в локальном .env (создается setup.sh, в Git не попадает)
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:?SUPERSET_SECRET_KEY is not set, run ./setup.sh}
+    volumes:
+      - superset_data:/app/superset_home
+    depends_on:
+      analytics_postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    command: >
+      sh -c "
+        superset db upgrade &&
+        (superset fab create-admin --username admin --firstname Admin --lastname User --email admin@example.com --password admin || true) &&
+        superset init &&
+        superset run -h 0.0.0.0 -p 8088 --with-threads
+      "
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - analytics_postgres
+
+volumes:
+  logs:
+  postgres_data:
+  analytics_postgres_data:
+  superset_data:
+  pgadmin_data:

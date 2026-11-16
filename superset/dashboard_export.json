@@ -1,0 +1,116 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "certification_details": null,
+                "certified_by": null,
+                "css": null,
+                "dashboard_title": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u043d\u043b\u0430\u0439\u043d-\u043f\u0440\u043e\u0434\u0430\u0436 (\u0432\u0430\u0440\u0438\u0430\u043d\u0442 12)",
+                "description": null,
+                "json_metadata": "{\"native_filter_configuration\": [{\"id\": \"NATIVE_FILTER-country\", \"name\": \"\\u0421\\u0442\\u0440\\u0430\\u043d\\u0430\", \"filterType\": \"filter_select\", \"targets\": [{\"datasetId\": 2, \"column\": {\"name\": \"country\"}}], \"controlValues\": {\"enableEmptyFilter\": false, \"defaultToFirstItem\": false, \"multiSelect\": true, \"searchAllOptions\": false, \"inverseSelection\": false, \"sortAscending\": true}, \"defaultDataMask\": {\"extraFormData\": {}, \"filterState\": {}, \"ownState\": {}}, \"cascadeParentIds\": [], \"scope\": {\"rootPath\": [\"ROOT_ID\"], \"excluded\": []}, \"type\": \"NATIVE_FILTER\", \"description\": \"\\u0424\\u0438\\u043b\\u044c\\u0442\\u0440 \\u043f\\u043e \\u0441\\u0442\\u0440\\u0430\\u043d\\u0435 \\u043f\\u043e\\u043a\\u0443\\u043f\\u0430\\u0442\\u0435\\u043b\\u044f\", \"chartsInScope\": [1, 2, 3, 4, 5], \"tabsInScope\": []}, {\"id\": \"NATIVE_FILTER-period\", \"name\": \"\\u041f\\u0435\\u0440\\u0438\\u043e\\u0434 (\\u0434\\u0430\\u0442\\u0430 \\u0441\\u0447\\u0435\\u0442\\u0430)\", \"filterType\": \"filter_time\", \"targets\": [{}], \"controlValues\": {\"enableEmptyFilter\": false}, \"defaultDataMask\": {\"extraFormData\": {}, \"filterState\": {}, \"ownState\": {}}, \"cascadeParentIds\": [], \"scope\": {\"rootPath\": [\"ROOT_ID\"], \"excluded\": []}, \"type\": \"NATIVE_FILTER\", \"description\": \"\\u0424\\u0438\\u043b\\u044c\\u0442\\u0440 \\u043f\\u043e \\u043f\\u0435\\u0440\\u0438\\u043e\\u0434\\u0443\", \"chartsInScope\": [1, 2, 3, 4, 5], \"tabsInScope\": []}], \"color_scheme\": \"supersetColors\", \"refresh_frequency\": 0, \"timed_refresh_immune_slices\": [], \"expanded_slices\": {}, \"label_colors\": {}, \"shared_label_colors\": {}, \"cross_filters_enabled\": true, \"chart_configuration\": {\"2\": {\"id\": 2, \"crossFilters\": {\"scope\": \"global\", \"chartsInScope\": [1, 3, 4, 5]}}, \"3\": {\"id\": 3, \"crossFilters\": {\"scope\": \"global\", \"chartsInScope\": [1, 2, 4, 5]}}, \"4\": {\"id\": 4, \"crossFilters\": {\"scope\": \"global\", \"chartsInScope\": [1, 2, 3, 5]}}, \"5\": {\"id\": 5, \"crossFilters\": {\"scope\": \"global\", \"chartsInScope\": [1, 2, 3, 4]}}}, \"global_chart_configuration\": {\"scope\": {\"rootPath\": [\"ROOT_ID\"], \"excluded\": []}, \"chartsInScope\": [1, 2, 3, 4, 5]}, \"color_scheme_domain\": [\"#1FA8C9\", \"#454E7C\", \"#5AC189\", \"#FF7F44\", \"#666666\", \"#E04355\", \"#FCC700\", \"#A868B7\", \"#3CCCCB\", \"#A38F79\", \"#8FD3E4\", \"#A1A6BD\", \"#ACE1C4\", \"#FEC0A1\", \"#B2B2B2\", \"#EFA1AA\", \"#FDE380\", \"#D3B3DA\", \"#9EE5E5\", \"#D1C6BC\"], \"remote_id\": 1}",
+                "position_json": "{\"DASHBOARD_VERSION_KEY\": \"v2\", \"ROOT_ID\": {\"type\": \"ROOT\", \"id\": \"ROOT_ID\", \"children\": [\"GRID_ID\"]}, \"GRID_ID\": {\"type\": \"GRID\", \"id\": \"GRID_ID\", \"children\": [\"ROW-0\", \"ROW-1\", \"ROW-2\"], \"parents\": [\"ROOT_ID\"]}, \"HEADER_ID\": {\"type\": \"HEADER\", \"id\": \"HEADER_ID\", \"meta\": {\"text\": \"\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u043d\u043b\u0430\u0439\u043d-\u043f\u0440\u043e\u0434\u0430\u0436 (\u0432\u0430\u0440\u0438\u0430\u043d\u0442 12)\"}}, \"ROW-0\": {\"type\": \"ROW\", \"id\": \"ROW-0\", \"children\": [\"CHART-1\", \"CHART-2\"], \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}}, \"CHART-1\": {\"type\": \"CHART\", \"id\": \"CHART-1\", \"children\": [], \"meta\": {\"chartId\": 1, \"width\": 3, \"height\": 50}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-0\"]}, \"CHART-2\": {\"type\": \"CHART\", \"id\": \"CHART-2\", \"children\": [], \"meta\": {\"chartId\": 2, \"width\": 9, \"height\": 50}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-0\"]}, \"ROW-1\": {\"type\": \"ROW\", \"id\": \"ROW-1\", \"children\": [\"CHART-3\", \"CHART-4\"], \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}}, \"CHART-3\": {\"type\": \"CHART\", \"id\": \"CHART-3\", \"children\": [], \"meta\": {\"chartId\": 3, \"width\": 6, \"height\": 60}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-1\"]}, \"CHART-4\": {\"type\": \"CHART\", \"id\": \"CHART-4\", \"children\": [], \"meta\": {\"chartId\": 4, \"width\": 6, \"height\": 60}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-1\"]}, \"ROW-2\": {\"type\": \"ROW\", \"id\": \"ROW-2\", \"children\": [\"CHART-5\"], \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}}, \"CHART-5\": {\"type\": \"CHART\", \"id\": \"CHART-5\", \"children\": [], \"meta\": {\"chartId\": 5, \"width\": 12, \"height\": 60}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-2\"]}}",
+                "published": true,
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "certification_details": null,
+                            "certified_by": null,
+                            "datasource_name": "public.online_retail_datamart",
+                            "datasource_type": "table",
+                            "description": null,
+                            "id": 1,
+                            "params": "{\"datasource\": \"2__table\", \"time_range\": \"No filter\", \"adhoc_filters\": [], \"metric\": \"revenue_total\", \"subheader\": \"\\u0447\\u0438\\u0441\\u0442\\u0430\\u044f \\u0432\\u044b\\u0440\\u0443\\u0447\\u043a\\u0430 \\u0441 \\u0443\\u0447\\u0435\\u0442\\u043e\\u043c \\u043e\\u0442\\u043c\\u0435\\u043d, GBP\", \"y_axis_format\": \",.2f\", \"header_font_size\": 0.3, \"subheader_font_size\": 0.125, \"viz_type\": \"big_number_total\", \"remote_id\": 1, \"datasource_name\": \"online_retail_datamart\", \"schema\": \"public\", \"database_name\": \"Analytics DB\"}",
+                            "query_context": null,
+                            "slice_name": "\u041e\u0431\u0449\u0430\u044f \u0432\u044b\u0440\u0443\u0447\u043a\u0430, GBP",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "certification_details": null,
+                            "certified_by": null,
+                            "datasource_name": "public.online_retail_datamart",
+                            "datasource_type": "table",
+                            "description": null,
+                            "id": 2,
+                            "params": "{\"datasource\": \"2__table\", \"time_range\": \"No filter\", \"adhoc_filters\": [], \"x_axis\": \"invoice_date\", \"time_grain_sqla\": \"P1D\", \"metrics\": [\"revenue_total\"], \"groupby\": [], \"row_limit\": 10000, \"show_legend\": false, \"rich_tooltip\": true, \"markerEnabled\": false, \"x_axis_title\": \"\\u0414\\u0430\\u0442\\u0430 \\u0441\\u0447\\u0435\\u0442\\u0430 (\\u0434\\u0435\\u043d\\u044c)\", \"x_axis_title_margin\": 30, \"y_axis_title\": \"\\u0412\\u044b\\u0440\\u0443\\u0447\\u043a\\u0430, GBP\", \"y_axis_title_margin\": 60, \"y_axis_title_position\": \"Left\", \"y_axis_format\": \",.0f\", \"x_axis_time_format\": \"%d.%m.%Y\", \"truncateYAxis\": false, \"zoomable\": true, \"viz_type\": \"echarts_timeseries_line\", \"remote_id\": 2, \"datasource_name\": \"online_retail_datamart\", \"schema\": \"public\", \"database_name\": \"Analytics DB\"}",
+                            "query_context": null,
+                            "slice_name": "\u0412\u044b\u0440\u0443\u0447\u043a\u0430 \u043f\u043e \u0434\u0430\u0442\u0430\u043c, GBP",
+                            "viz_type": "echarts_timeseries_line"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "certification_details": null,
+                            "certified_by": null,
+                            "datasource_name": "public.online_retail_datamart",
+                            "datasource_type": "table",
+                            "description": null,
+                            "id": 3,
+                            "params": "{\"datasource\": \"2__table\", \"time_range\": \"No filter\", \"adhoc_filters\": [], \"x_axis\": \"country\", \"metrics\": [\"revenue_total\"], \"groupby\": [], \"row_limit\": 10, \"x_axis_sort\": \"revenue_total\", \"x_axis_sort_asc\": true, \"timeseries_limit_metric\": \"revenue_total\", \"order_desc\": true, \"orientation\": \"horizontal\", \"show_value\": true, \"show_legend\": false, \"x_axis_title\": \"\\u0421\\u0442\\u0440\\u0430\\u043d\\u0430\", \"x_axis_title_margin\": 100, \"xAxisLabelRotation\": 0, \"y_axis_title\": \"\\u0412\\u044b\\u0440\\u0443\\u0447\\u043a\\u0430, GBP\", \"y_axis_title_margin\": 30, \"y_axis_title_position\": \"Left\", \"y_axis_format\": \",.4~s\", \"rich_tooltip\": true, \"viz_type\": \"echarts_timeseries_bar\", \"y_axis_bounds\": [null, null], \"remote_id\": 3, \"datasource_name\": \"online_retail_datamart\", \"schema\": \"public\", \"database_name\": \"Analytics DB\"}",
+                            "query_context": null,
+                            "slice_name": "\u0422\u043e\u043f-10 \u0441\u0442\u0440\u0430\u043d \u043f\u043e \u0432\u044b\u0440\u0443\u0447\u043a\u0435, GBP",
+                            "viz_type": "echarts_timeseries_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "certification_details": null,
+                            "certified_by": null,
+                            "datasource_name": "public.online_retail_datamart",
+                            "datasource_type": "table",
+                            "description": null,
+                            "id": 4,
+                            "params": "{\"datasource\": \"2__table\", \"time_range\": \"No filter\", \"adhoc_filters\": [], \"groupby\": [\"country\"], \"metric\": \"revenue_total\", \"row_limit\": 100, \"sort_by_metric\": true, \"show_labels\": true, \"label_type\": \"key_percent\", \"show_labels_threshold\": 1.5, \"labels_outside\": true, \"label_line\": true, \"number_format\": \",.0f\", \"show_legend\": false, \"legendType\": \"scroll\", \"legendOrientation\": \"right\", \"donut\": false, \"outerRadius\": 65, \"viz_type\": \"pie\", \"remote_id\": 4, \"datasource_name\": \"online_retail_datamart\", \"schema\": \"public\", \"database_name\": \"Analytics DB\"}",
+                            "query_context": null,
+                            "slice_name": "\u0414\u043e\u043b\u0438 \u043f\u0440\u043e\u0434\u0430\u0436 \u043f\u043e \u0441\u0442\u0440\u0430\u043d\u0430\u043c",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "certification_details": null,
+                            "certified_by": null,
+                            "datasource_name": "public.online_retail_datamart",
+                            "datasource_type": "table",
+                            "description": null,
+                            "id": 5,
+                            "params": "{\"datasource\": \"2__table\", \"time_range\": \"No filter\", \"adhoc_filters\": [], \"x_axis\": \"country\", \"metrics\": [\"revenue_total\"], \"metrics_b\": [\"orders_count\"], \"groupby\": [], \"groupby_b\": [], \"adhoc_filters_b\": [], \"row_limit\": 10, \"row_limit_b\": 10, \"timeseries_limit_metric\": \"revenue_total\", \"order_desc\": true, \"timeseries_limit_metric_b\": \"revenue_total\", \"order_desc_b\": true, \"seriesType\": \"bar\", \"seriesTypeB\": \"line\", \"yAxisIndex\": 0, \"yAxisIndexB\": 1, \"show_value\": false, \"show_valueB\": true, \"markerEnabledB\": true, \"logAxis\": true, \"logAxisSecondary\": false, \"y_axis_format\": \",.0f\", \"y_axis_format_secondary\": \",d\", \"yAxisTitle\": \"\\u0412\\u044b\\u0440\\u0443\\u0447\\u043a\\u0430, GBP (\\u043b\\u043e\\u0433. \\u0448\\u043a\\u0430\\u043b\\u0430)\", \"yAxisTitleSecondary\": \"\\u0417\\u0430\\u043a\\u0430\\u0437\\u044b, \\u0448\\u0442.\", \"y_axis_title\": \"\\u0412\\u044b\\u0440\\u0443\\u0447\\u043a\\u0430, GBP (\\u043b\\u043e\\u0433. \\u0448\\u043a\\u0430\\u043b\\u0430)\", \"y_axis_title_margin\": 60, \"y_axis_title_position\": \"Left\", \"x_axis_title\": \"\\u0421\\u0442\\u0440\\u0430\\u043d\\u0430\", \"x_axis_title_margin\": 60, \"xAxisLabelRotation\": 45, \"show_legend\": true, \"rich_tooltip\": true, \"zoomable\": false, \"viz_type\": \"mixed_timeseries\", \"y_axis_bounds\": [10000, 10000000], \"y_axis_bounds_secondary\": [null, null], \"remote_id\": 5, \"datasource_name\": \"online_retail_datamart\", \"schema\": \"public\", \"database_name\": \"Analytics DB\"}",
+                            "query_context": null,
+                            "slice_name": "\u0412\u044b\u0440\u0443\u0447\u043a\u0430 (\u0441\u0442\u043e\u043b\u0431\u0446\u044b) \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043a\u0430\u0437\u043e\u0432 (\u043b\u0438\u043d\u0438\u044f) \u043f\u043e \u0441\u0442\u0440\u0430\u043d\u0430\u043c, \u0442\u043e\u043f-10",
+                            "viz_type": "mixed_timeseries"
+                        }
+                    }
+                ],
+                "slug": "online-retail-v12"
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "always_filter_main_dttm": false,
+                "cache_timeout": null,
+                "database_id": 2,
+                "default_endpoint": null,
+                "description": "\u0412\u0438\u0442\u0440\u0438\u043d\u0430 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u0430 12 (VIEW online_retail_datamart)",
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": true,
+                "main_dttm_col": "invoice_date",
+                "normalize_columns": false,
+                "offset": 0,
+                "params": "{\"remote_id\": 2, \"database_name\": \"Analytics DB\"}",
+                "schema": "public",
+                "sql": null,
+                "table_name": "online_retail_datamart",
+                "template_params": null
+            }
+        }
+    ]
+}
